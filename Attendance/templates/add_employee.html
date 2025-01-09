@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Employee</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Add the same CSS as in mark_attendance.html */
+    </style>
+</head>
+<body>
+    <div class="main-block">
+        <h1>Add Employee</h1>
+        
+        <!-- Form to Add Employee -->
+        <form action="/add_employee" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br>
+            <label for="role">Role:</label>
+            <input type="text" id="role" name="role" required><br>
+            <div class="btn-block">
+                <button type="submit">Add Employee</button>
+            </div>
+        </form>
+        
+        <!-- Link to Mark Attendance Page -->
+        <div class="nav-links">
+            <a href="/">Back to Mark Attendance</a>
+        </div>
+        
+        <!-- Flash Messages -->
+        <div class="flash-messages">
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <ul>
+                        {% for message in messages %}
+                            <li>{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endwith %}
+        </div>
+    </div>
+</body>
+</html>
